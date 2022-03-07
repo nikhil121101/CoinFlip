@@ -8,9 +8,9 @@ contract CoinFlip {
         int balance;
     }
 
-    mapping(address => Account) public accounts; 
+    mapping(address => Account) accounts; 
 
-    function createAccountIfNeeded(address user) private{
+    function createAccountIfNeeded(address user) private {
         if(!accounts[user].created) {
             accounts[user].created = true;
             accounts[user].balance = 100;
@@ -25,7 +25,7 @@ contract CoinFlip {
         int amount;
     }
 
-    Bet[] public currentBets;
+    Bet[] currentBets;
 
     function placeBet(int _amount, int _guess) public {
         address _user = msg.sender;
